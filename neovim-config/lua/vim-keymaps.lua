@@ -18,10 +18,10 @@ vim.keymap.set('n', '[B', ':bfirst<CR>')
 vim.keymap.set('n', ']B', ':blast<CR>')
 
 -- split movement
-vim.keymap.set('n', '<C-J>', '<C-W><C-J>')
-vim.keymap.set('n', '<C-K>', '<C-W><C-K>')
-vim.keymap.set('n', '<C-H>', '<C-W><C-H>')
-vim.keymap.set('n', '<C-L>', '<C-W><C-L>')
+vim.keymap.set('n', '<C-J>', ':wincmd j<CR>')
+vim.keymap.set('n', '<C-K>', ':wincmd k<CR>')
+vim.keymap.set('n', '<C-H>', ':wincmd h<CR>')
+vim.keymap.set('n', '<C-L>', ':wincmd l<CR>')
 
 -- arrow keys
 vim.keymap.set({'n', 'o'}, '<Up>', 'ddkP')
