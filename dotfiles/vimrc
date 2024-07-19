@@ -1,0 +1,124 @@
+set nocompatible
+
+so ~/.vim/plugins.vim
+
+set encoding=utf-8
+
+filetype plugin on
+filetype indent on
+
+set shellslash
+runtime macros/matchit.vim
+
+syntax on
+
+set autoindent
+set pastetoggle=<f5>
+
+set number
+set shiftround
+
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+let g:html_indent_inctags = "html,body,head,tbody"
+
+set backspace=2
+set backspace=indent,eol,start
+
+"----- Visual -----"
+
+set t_Co=256
+set background=dark
+colorscheme solarized
+hi Normal guibg=NONE ctermbg=NONE
+
+"Remove Scrollbars
+set guioptions-=l
+set guioptions-=L
+set guioptions-=r
+set guioptions-=R
+
+set guioptions-=e	" no GUI tabs
+set linespace=5		" vertical spacing (GUI)
+
+set laststatus=2
+
+hi LineNr guibg=bg
+hi vertsplit guifg=bg guibg=bg
+
+"----- Font -----"
+
+"set guifont=Operator_Mono_Light:h13:cANSI
+set guifont=MonoLisa_Light:h12:cANSI
+
+highlight Comment gui=italic
+highlight Comment cterm=italic
+highlight htmlArg gui=italic
+highlight htmlArg cterm=italic
+
+"----- Search ----"
+
+set hlsearch
+set incsearch
+
+"----- Splits -----"
+
+set splitbelow
+set splitright
+
+nmap <C-J> <C-W><C-J>
+nmap <C-K> <C-W><C-K>
+nmap <C-H> <C-W><C-H>
+nmap <C-L> <C-W><C-L>
+
+"----- Key Mapping -----"
+
+let mapleader = ','
+
+no <leader>v :vsplit $MYVIMRC<CR>
+
+nmap <leader><space> :nohlsearch<CR>
+
+nmap <leader>l :set list!<CR>
+
+nmap <leader>f :tag<space>
+
+nnoremap <silent> [b :bprevious<CR>
+nnoremap <silent> ]b :bnext<CR>
+nnoremap <silent> [B :bfirst<CR>
+nnoremap <silent> ]B :blast<CR>
+
+ino jk <esc>
+
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%.h').'/' : '%%'
+
+no <Up> ddkP
+no <Down> ddp
+no <Left> <Nop>
+no <Right> <Nop>
+
+ino <Up> <Nop>
+ino <Down> <Nop> 
+ino <Left> <Nop>
+ino <Right> <Nop>
+
+vno <Up> <Nop>
+vno <Down> <Nop> 
+vno <Left> <Nop>
+vno <Right> <Nop>
+
+"----- Plugins -----"
+
+"----- AutoCommands -----"
+
+augroup vimrc_updates
+  autocmd!
+  autocmd bufwritepost .vimrc source $MYVIMRC
+augroup END
+
+augroup filetype_stuff
+  autocmd!
+  autocmd BufNewFile, BufReadPost *.md set filetype=markdown
+augroup end
