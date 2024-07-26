@@ -2,8 +2,12 @@
 -- Vim General Options
 --
 
+-- colors
+vim.cmd("set termguicolors")
+
 -- line numbering (default to on)
 vim.cmd("set number")
+vim.cmd("set relativenumber")
 
 -- tab stops
 vim.cmd("set expandtab")

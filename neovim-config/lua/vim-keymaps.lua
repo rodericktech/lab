@@ -17,7 +17,10 @@ vim.keymap.set('n', ']b', ':bnext<CR>')
 vim.keymap.set('n', '[B', ':bfirst<CR>')
 vim.keymap.set('n', ']B', ':blast<CR>')
 
--- split movement
+-- splits and split movement
+vim.keymap.set('n', '<leader>v', ':vsplit<CR>')
+vim.keymap.set('n', '<leader>h', ':split<CR>')
+
 vim.keymap.set('n', '<C-J>', ':wincmd j<CR>')
 vim.keymap.set('n', '<C-K>', ':wincmd k<CR>')
 vim.keymap.set('n', '<C-H>', ':wincmd h<CR>')
