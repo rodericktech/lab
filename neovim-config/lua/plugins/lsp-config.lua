@@ -1,3 +1,5 @@
+-- lsp-config.lua
+
 return {
 	{
 		"williamboman/mason.nvim",

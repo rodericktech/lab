@@ -1,3 +1,5 @@
+-- catppuccin.lua
+
 return {
 	"catppuccin/nvim",
 	lazy = false,

@@ -1,3 +1,5 @@
+-- nvim-tmux-nav.lua
+
 return {
 	"christoomey/vim-tmux-navigator",
 	config = function()

@@ -1,3 +1,5 @@
+-- treesitter.lua
+
 return {
 	"nvim-treesitter/nvim-treesitter",
 	build = ":TSUpdate",
@@ -6,15 +8,19 @@ return {
 		ts_config.setup({
 			ensure_installed = {
 				"lua",
-				"javascript",
-				"python",
 				"c",
+        "elm",
+        "go",
+				"haskell",
+				"html",
+				"javascript",
+				"markdown",
+				"python",
+        "rust",
+				"typescript",
 				"vim",
 				"vimdoc",
-				"html",
-				"typescript",
-				"haskell",
-				"markdown",
+        "zig",
 			},
 			highlight = { enable = true },
 			indent = { enable = true },

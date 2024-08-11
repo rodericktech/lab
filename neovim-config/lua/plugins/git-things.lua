@@ -1,3 +1,5 @@
+-- git-things.lua
+
 return {
 	{
 		"tpope/vim-fugitive",
