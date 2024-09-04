@@ -40,6 +40,12 @@ set-option -g renumber-windows on
 bind '"' split-window -v -c "#{pane_current_path}"
 bind % split-window -h -c "#{pane_current_path}"
 
+# enable bpytop pane, bind to Alt-b
+bind -n M-b popup -d "#{pane_current_path}" -E -h 95% -w 95% -x 100% "bpytop"
+
+# enable lazygit pane, bind to Alt-l
+bind -n M-l popup -d "#{pane_current_path}" -E -h 95% -w 95% -x 100% "lazygit"
+
 #!/usr/bin/env bash
 # Nightfox colors for Tmux
 # Style: nightfox
