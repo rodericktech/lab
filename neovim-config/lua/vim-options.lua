@@ -16,6 +16,7 @@ vim.cmd("set expandtab")
 vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
+vim.cmd("let g:markdown_recommended_style = 0")
 
 -- search
 vim.cmd("set hlsearch")

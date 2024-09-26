@@ -18,7 +18,7 @@ return {
 					"lua_ls",
 					"pyright",
 					"sqlls",
-					"tsserver",
+					"ts_ls",
 					"yamlls",
 				},
 			})
@@ -27,32 +27,23 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
-			local capabilities = require("cmp_nvim_lsp").default_capabilities()
+      require("mason-lspconfig").setup()
 
-			local lspconfig = require("lspconfig")
-			lspconfig.bashls.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.cssls.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.hls.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.lua_ls.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.pyright.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.sqlls.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.tsserver.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.yamlls.setup({
-				capabilities = capabilities,
+      require("mason-lspconfig").setup_handlers({
+				-- Will be called for each installed server that doesn't have
+				-- a dedicated handler.
+				--
+				function(server_name) -- default handler (optional)
+					-- https://github.com/neovim/nvim-lspconfig/pull/3232
+					if server_name == "tsserver" then
+						server_name = "ts_ls"
+					end
+
+					local capabilities = require("cmp_nvim_lsp").default_capabilities()
+					require("lspconfig")[server_name].setup({
+						capabilities = capabilities,
+					})
+				end,
 			})
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})

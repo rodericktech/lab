@@ -1,6 +1,14 @@
 -- colorscheme.lua
 
 return {
+  --[[
+  {
+    'joshporter3/nvim-base16',
+    config = function()
+      vim.cmd("colorscheme base16-default-dark")
+    end,
+  },
+  ]]--
   {
     "EdenEast/nightfox.nvim",
     config = function()

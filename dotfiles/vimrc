@@ -31,7 +31,7 @@ set backspace=indent,eol,start
 
 set t_Co=256
 set background=dark
-colorscheme solarized
+colorscheme SlateDark
 hi Normal guibg=NONE ctermbg=NONE
 
 "Remove Scrollbars
