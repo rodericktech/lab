@@ -22,11 +22,12 @@ vim.keymap.set("n", "-", '<C-X>')
 -- select all
 vim.keymap.set("n", "<C-A>", "gg<S-v>G")
 
--- buffer movement
+-- buffer movement and closure
 vim.keymap.set("n", "[b", ":bprevious<CR>")
 vim.keymap.set("n", "]b", ":bnext<CR>")
 vim.keymap.set("n", "[B", ":bfirst<CR>")
 vim.keymap.set("n", "]B", ":blast<CR>")
+vim.keymap.set("n", "<leader>bo", "<cmd>%bd|e#<cr>", { desc = "Close all buffers but the current one" })
 
 -- splits and split movement
 vim.keymap.set("n", "<leader>v", ":vsplit<CR>", opts)
@@ -47,4 +48,3 @@ vim.keymap.set({ "n", "o" }, "<Right>", "<Nop>", opts)
 -- vim.keymap.set({'i', 'n', 'o'}, '<Down>', '<Nop>')
 -- vim.keymap.set({'i', 'n', 'o'}, '<Left>', '<Nop>')
 -- vim.keymap.set({'i', 'n', 'o'}, '<Right>', '<Nop>')
-

@@ -8,7 +8,14 @@ return {
     local null_ls = require("null-ls")
     null_ls.setup({
       sources = {
-        require("none-ls.diagnostics.eslint"),
+        -- require("none-ls.diagnostics.eslint"),
+        -- Elixir / Phoenix
+        -- null_ls.builtins.diagnostics.credo,
+        null_ls.builtins.formatting.mix,
+        null_ls.builtins.formatting.surface,
+        null_ls.builtins.formatting.erlfmt,
+
+        -- JS, Python, and others
         null_ls.builtins.formatting.prettier,
         null_ls.builtins.formatting.shfmt,
         null_ls.builtins.formatting.stylua,
